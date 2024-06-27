@@ -4,30 +4,30 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Maxton | Bootstrap 5 Admin Dashboard Template</title>
+  <title>@yield('title')</title>
   <!--favicon-->
   <link rel="icon" href="assets/images/favicon-32x32.png" type="image/png">
   <!-- loader-->
-	<link href="assets/css/pace.min.css" rel="stylesheet">
-	<script src="assets/js/pace.min.js"></script>
+	<link href="{{asset('assets/css/pace.min.css')}}" rel="stylesheet">
+	<script src="{{asset('assets/js/pace.min.js')}}"></script>
 
   <!--plugins-->
-  <link href="assets/plugins/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="assets/plugins/metismenu/metisMenu.min.css">
-  <link rel="stylesheet" type="text/css" href="assets/plugins/metismenu/mm-vertical.css">
-  <link rel="stylesheet" type="text/css" href="assets/plugins/simplebar/css/simplebar.css">
+  <link href="{{asset('assets/plugins/perfect-scrollbar/css/perfect-scrollbar.css')}}" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="{{asset('assets/plugins/metismenu/metisMenu.min.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{asset('assets/plugins/metismenu/mm-vertical.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{asset('assets/plugins/simplebar/css/simplebar.css')}}">
   <!--bootstrap css-->
-  <link href="assets/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Material+Icons+Outlined" rel="stylesheet">
+  <link href="{{asset('assets/css/bootstrap.min.css')}}" rel="stylesheet">
+  <link href="{{asset('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600&display=swap')}}" rel="stylesheet">
+  <link href="{{asset('https://fonts.googleapis.com/css?family=Material+Icons+Outlined')}}" rel="stylesheet">
   <!--main css-->
-  <link href="assets/css/bootstrap-extended.css" rel="stylesheet">
-  <link href="sass/main.css" rel="stylesheet">
-  <link href="sass/dark-theme.css" rel="stylesheet">
-  <link href="sass/blue-theme.css" rel="stylesheet">
-  <link href="sass/semi-dark.css" rel="stylesheet">
-  <link href="sass/bordered-theme.css" rel="stylesheet">
-  <link href="sass/responsive.css" rel="stylesheet">
+  <link href="{{asset('assets/css/bootstrap-extended.css')}}" rel="stylesheet">
+  <link href="{{asset('sass/main.css')}}" rel="stylesheet">
+  <link href="{{asset('sass/dark-theme.css')}}" rel="stylesheet">
+  <link href="{{asset('sass/blue-theme.css')}}" rel="stylesheet">
+  <link href="{{asset('sass/semi-dark.css')}}" rel="stylesheet">
+  <link href="{{asset('sass/bordered-theme.css')}}" rel="stylesheet">
+  <link href="{{asset('sass/responsive.css')}}" rel="stylesheet">
 
 </head>
 
@@ -415,8 +415,8 @@
                       <img src="https://placehold.co/110x110/png" class="rounded-circle" width="45" height="45" alt="">
                     </div>
                     <div class="">
-                      <h5 class="notify-title">Congratulations Jhon</h5>
-                      <p class="mb-0 notify-desc">Many congtars jhon. You have won the gifts.</p>
+                      <h5 class="notify-title">Congratulations Eris</h5>
+                      <p class="mb-0 notify-desc">Many congtars Eris. You have won the gifts.</p>
                       <p class="mb-0 notify-time">Today</p>
                     </div>
                     <div class="notify-close position-absolute end-0 me-3">
@@ -471,8 +471,12 @@
             <a class="dropdown-item d-flex align-items-center gap-2 py-2" href="javascript:;"><i
               class="material-icons-outlined">dashboard</i>Dashboard</a>
             <hr class="dropdown-divider">
-            <a class="dropdown-item d-flex align-items-center gap-2 py-2" href="javascript:;"><i
+            <a class="dropdown-item d-flex align-items-center gap-2 py-2" href="{{ route('logout') }}" onclick="event.preventDefault();
+                document.getElementById('logout-form').submit();"><i
             class="material-icons-outlined">power_settings_new</i>Logout</a>
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                    @csrf
+                </form>
           </div>
         </li>
       </ul>
@@ -486,7 +490,7 @@
    <aside class="sidebar-wrapper" data-simplebar="true">
     <div class="sidebar-header">
       <div class="logo-icon">
-        <img src="assets/images/logo-icon.png" class="logo-img" alt="">
+        <img src="assets/images/tokokelontong.jpg" class="logo-img" alt="">
       </div>
       <div class="logo-name flex-grow-1">
         <h5 class="mb-0">Gudang Toko Fathurrahmah</h5>
@@ -498,16 +502,23 @@
     <div class="sidebar-nav">
         <!--navigation-->
         <ul class="metismenu" id="sidenav">
-          <li>
+        <li>
             <a href="javascript:;" class="has-arrow">
               <div class="parent-icon"><i class="material-icons-outlined">home</i>
+              </div>
+              <div class="menu-title">Dashboard</div>
+            </a>
+          </li>
+          <li>
+            <a href="javascript:;" class="has-arrow">
+              <div class="parent-icon"><i class="material-icons-outlined">dashboard</i>
               </div>
               <div class="menu-title">Stok</div>
             </a>
           </li>
           <li>
             <a href="javascript:;" class="has-arrow">
-              <div class="parent-icon"><i class="material-icons-outlined">widgets</i>
+              <div class="parent-icon"><i class="material-icons-outlined">upload</i>
               </div>
               <div class="menu-title">Data Barang Masuk</div>
             </a>
@@ -520,7 +531,7 @@
           </li>
           <li>
             <a class="has-arrow" href="javascript:;">
-              <div class="parent-icon"><i class="material-icons-outlined">apps</i>
+              <div class="parent-icon"><i class="material-icons-outlined">download</i>
               </div>
               <div class="menu-title">Data Barang Keluar</div>
             </a>
@@ -535,7 +546,140 @@
   </aside>
 <!--end sidebar-->
 
+ <main class="main-wrapper">
+    <div class="main-content">
+      <!--breadcrumb-->
+		 <div class="card-body">
+          <div class="row row-cols-1 row-cols-lg-2 row-cols-xl-4 g-3">
+            <div class="col">
+              <div class="card rounded-4 mb-0 border">
+                <div class="card-body">
+                  <div class="d-flex align-items-center justify-content-between">
+                    <img src="assets/images/apps/05.png" width="35" alt="">
+                    <div class="dropdown">
+                      <a href="javascript:;" class="dropdown-toggle-nocaret options dropdown-toggle"
+                        data-bs-toggle="dropdown">
+                        <span class="material-icons-outlined fs-5">more_vert</span>
+                      </a>
+                      <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="javascript:;">Action</a></li>
+                        <li><a class="dropdown-item" href="javascript:;">Another action</a></li>
+                        <li><a class="dropdown-item" href="javascript:;">Something else here</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="mt-4">
+                    <h4 class="mb-0 fw-light">45.2K</h4>
+                    <p class="mb-0">Followers</p>
+                  </div>
+                  <div class="d-flex align-items-center justify-content-end gap-1 mt-3">
+                    <p
+                      class="dash-lable d-flex align-items-center gap-1 rounded mb-0 bg-danger text-danger bg-opacity-10">
+                      <span class="material-icons-outlined fs-6">arrow_downward</span>45.7%
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card rounded-4 mb-0 border">
+                <div class="card-body">
+                  <div class="d-flex align-items-center justify-content-between">
+                    <img src="assets/images/apps/18.png" width="35" alt="">
+                    <div class="dropdown">
+                      <a href="javascript:;" class="dropdown-toggle-nocaret options dropdown-toggle"
+                        data-bs-toggle="dropdown">
+                        <span class="material-icons-outlined fs-5">more_vert</span>
+                      </a>
+                      <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="javascript:;">Action</a></li>
+                        <li><a class="dropdown-item" href="javascript:;">Another action</a></li>
+                        <li><a class="dropdown-item" href="javascript:;">Something else here</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="mt-4">
+                    <h4 class="mb-0 fw-light">62.4K</h4>
+                    <p class="mb-0">Followers</p>
+                  </div>
+                  <div class="d-flex align-items-center justify-content-end gap-1 mt-3">
+                    <p
+                      class="dash-lable d-flex align-items-center gap-1 rounded mb-0 bg-success text-success bg-opacity-10">
+                      <span class="material-icons-outlined fs-6">arrow_downward</span>25.6%
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card rounded-4 mb-0 border">
+                <div class="card-body">
+                  <div class="d-flex align-items-center justify-content-between">
+                    <img src="assets/images/apps/17.png" width="35" alt="">
+                    <div class="dropdown">
+                      <a href="javascript:;" class="dropdown-toggle-nocaret options dropdown-toggle"
+                        data-bs-toggle="dropdown">
+                        <span class="material-icons-outlined fs-5">more_vert</span>
+                      </a>
+                      <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="javascript:;">Action</a></li>
+                        <li><a class="dropdown-item" href="javascript:;">Another action</a></li>
+                        <li><a class="dropdown-item" href="javascript:;">Something else here</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="mt-4">
+                    <h4 class="mb-0 fw-light">25.8K</h4>
+                    <p class="mb-0">Followers</p>
+                  </div>
+                  <div class="d-flex align-items-center justify-content-end gap-1 mt-3">
+                    <p
+                      class="dash-lable d-flex align-items-center gap-1 rounded mb-0 bg-danger text-danger bg-opacity-10">
+                      <span class="material-icons-outlined fs-6">arrow_downward</span>25.6%
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card rounded-4 mb-0 border">
+                <div class="card-body">
+                  <div class="d-flex align-items-center justify-content-between">
+                    <img src="assets/images/apps/19.png" width="35" alt="">
+                    <div class="dropdown">
+                      <a href="javascript:;" class="dropdown-toggle-nocaret options dropdown-toggle"
+                        data-bs-toggle="dropdown">
+                        <span class="material-icons-outlined fs-5">more_vert</span>
+                      </a>
+                      <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="javascript:;">Action</a></li>
+                        <li><a class="dropdown-item" href="javascript:;">Another action</a></li>
+                        <li><a class="dropdown-item" href="javascript:;">Something else here</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="mt-4">
+                    <h4 class="mb-0 fw-light">58.9K</h4>
+                    <p class="mb-0">Followers</p>
+                  </div>
+                  <div class="d-flex align-items-center justify-content-end gap-1 mt-3">
+                    <p
+                      class="dash-lable d-flex align-items-center gap-1 rounded mb-0 bg-success text-success bg-opacity-10">
+                      <span class="material-icons-outlined fs-6">north</span>34.8%
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
 
+          </div><!--end row-->
+        </div>
+		<!--end breadcrumb-->
+      
+	 
+        
+    </div>
+  </main>
 
 
    <!--start footer-->
@@ -546,21 +690,21 @@
   
 
   <!--bootstrap js-->
-  <script src="assets/js/bootstrap.bundle.min.js"></script>
+  <script src="{{asset('assets/js/bootstrap.bundle.min.js')}}"></script>
 
   <!--plugins-->
-  <script src="assets/js/jquery.min.js"></script>
+  <script src="{{asset('assets/js/jquery.min.js')}}"></script>
   <!--plugins-->
-  <script src="assets/plugins/perfect-scrollbar/js/perfect-scrollbar.js"></script>
-  <script src="assets/plugins/metismenu/metisMenu.min.js"></script>
-  <script src="assets/plugins/apexchart/apexcharts.min.js"></script>
-  <script src="assets/plugins/simplebar/js/simplebar.min.js"></script>
-  <script src="assets/plugins/peity/jquery.peity.min.js"></script>
+  <script src="{{asset('assets/plugins/perfect-scrollbar/js/perfect-scrollbar.js')}}"></script>
+  <script src="{{asset('assets/plugins/metismenu/metisMenu.min.js')}}"></script>
+  <script src="{{asset('assets/plugins/apexchart/apexcharts.min.js')}}"></script>
+  <script src="{{asset('assets/plugins/simplebar/js/simplebar.min.js')}}"></script>
+  <script src="{{asset('assets/plugins/peity/jquery.peity.min.js')}}"></script>
   <script>
     $(".data-attributes span").peity("donut")
   </script>
-  <script src="assets/js/main.js"></script>
-  <script src="assets/js/dashboard1.js"></script>
+  <script src="{{asset('assets/js/main.js')}}"></script>
+  <script src="{{asset('assets/js/dashboard1.js')}}"></script>
   <script>
 	   new PerfectScrollbar(".user-list")
   </script>

@@ -1,4 +1,5 @@
 @extends('layouts.master')
+@section('heading','Halaman Dashboard')
 
 @section('content')
 <div class="container">
@@ -15,6 +16,9 @@
                     @endif
 
                     {{ __('You are logged in!') }}
+
+
+                    
                 </div>
             </div>
         </div>

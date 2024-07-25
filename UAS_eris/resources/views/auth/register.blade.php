@@ -79,7 +79,7 @@
 												</div>
 											</div>
                       <div class="col-12">
-												<label for="inputChoosePassword" class="form-label">Repeat Password</label>
+												<label for="inputChoosePassword" class="form-label">Ulangi Password</label>
 												<div class="input-group" id="show_hide_password">
 													<input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                             
@@ -95,7 +95,7 @@
 											<div class="col-12">
 												<div class="form-check form-switch">
 													<input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked">
-													<label class="form-check-label" for="flexSwitchCheckChecked">I read and agree to Terms &amp; Conditions</label>
+													<label class="form-check-label" for="flexSwitchCheckChecked">Setuju dan Lanjutkan</label>
 												</div>
 											</div>
 											<div class="col-12">
@@ -105,7 +105,7 @@
 											</div>
 											<div class="col-12">
 												<div class="text-start">
-													<p class="mb-0">Already have an account? <a href="auth-basic-login.html">Sign in here</a></p>
+													<p class="mb-0">Sudah punya akun? <a href="auth-basic-login.html">Sign in here</a></p>
 												</div>
 											</div>
 										</form>

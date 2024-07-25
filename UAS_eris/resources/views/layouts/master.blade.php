@@ -10,7 +10,19 @@
   <!-- loader-->
 	<link href="{{asset('assets/css/pace.min.css')}}" rel="stylesheet">
 	<script src="{{asset('assets/js/pace.min.js')}}"></script>
-
+  <div class="nk-content ">
+                    <div class="container-fluid">
+                        <div class="nk-content-inner">
+                            <div class="nk-content-body">
+                                <h2>                                
+                                    <p>@yield('heading')</p>
+                                </h2>
+                                <hr>
+                                    <p>@yield('content')</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
   <!--plugins-->
   <link href="{{asset('assets/plugins/perfect-scrollbar/css/perfect-scrollbar.css')}}" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="{{asset('assets/plugins/metismenu/metisMenu.min.css')}}">
@@ -107,7 +119,7 @@
                 <div class="search-list d-flex flex-column gap-2">
                   <div class="search-list-item d-flex align-items-center gap-3">
                     <div class="memmber-img">
-                      <img src="https://placehold.co/110x110/png" width="32" height="32" class="rounded-circle" alt="">
+                      <img src="assets/images/fotokucing.jpg"  width="32" height="32" class="rounded-circle" alt="">
                     </div>
                     <div class="">
                       <h5 class="mb-0 search-list-title ">Andrew Stark</h5>
@@ -116,7 +128,7 @@
   
                   <div class="search-list-item d-flex align-items-center gap-3">
                     <div class="memmber-img">
-                      <img src="https://placehold.co/110x110/png" width="32" height="32" class="rounded-circle" alt="">
+                      <img src="assets/images/fotokucing.jpg" width="32" height="32" class="rounded-circle" alt="">
                     </div>
                     <div class="">
                       <h5 class="mb-0 search-list-title ">Eris Midya</h5>
@@ -125,7 +137,7 @@
   
                   <div class="search-list-item d-flex align-items-center gap-3">
                     <div class="memmber-img">
-                      <img src="https://placehold.co/110x110/png" width="32" height="32" class="rounded-circle" alt="">
+                      <img src="assets/images/fotokucing.jpg" width="32" height="32" class="rounded-circle" alt="">
                     </div>
                     <div class="">
                       <h5 class="mb-0 search-list-title">Michle Clark</h5>
@@ -344,7 +356,7 @@
                 <a class="dropdown-item border-bottom py-2" href="javascript:;">
                   <div class="d-flex align-items-center gap-3">
                     <div class="">
-                      <img src="https://placehold.co/110x110/png" class="rounded-circle" width="45" height="45" alt="">
+                      <img src="assets/images/fotokucing.jpg"  class="rounded-circle" width="45" height="45" alt="">
                     </div>
                     <div class="">
                       <h5 class="notify-title">Congratulations Jhon</h5>
@@ -378,7 +390,8 @@
                 <a class="dropdown-item border-bottom py-2" href="javascript:;">
                   <div class="d-flex align-items-center gap-3">
                     <div class="">
-                      <img src="assets/images/apps/13.png" class="rounded-circle" width="45" height="45" alt="">
+                      <img src="assets/images/fotokucing.jpg" 
+                       class="rounded-circle" width="45" height="45" alt="">
                     </div>
                     <div class="">
                       <h5 class="notify-title">Payment Recived</h5>
@@ -395,7 +408,7 @@
                 <a class="dropdown-item border-bottom py-2" href="javascript:;">
                   <div class="d-flex align-items-center gap-3">
                     <div class="">
-                      <img src="assets/images/apps/14.png" class="rounded-circle" width="45" height="45" alt="">
+                      <img src="assets/images/fotokucing.jpg"  class="rounded-circle" width="45" height="45" alt="">
                     </div>
                     <div class="">
                       <h5 class="notify-title">New Order Recived</h5>
@@ -412,7 +425,7 @@
                 <a class="dropdown-item border-bottom py-2" href="javascript:;">
                   <div class="d-flex align-items-center gap-3">
                     <div class="">
-                      <img src="https://placehold.co/110x110/png" class="rounded-circle" width="45" height="45" alt="">
+                      <img src="assets/images/fotokucing.jpg" class="rounded-circle" width="45" height="45" alt="">
                     </div>
                     <div class="">
                       <h5 class="notify-title">Congratulations Eris</h5>
@@ -458,7 +471,7 @@
           <div class="dropdown-menu dropdown-user dropdown-menu-end shadow">
             <a class="dropdown-item  gap-2 py-2" href="javascript:;">
               <div class="text-center">
-                <img src="https://placehold.co/110x110/png" class="rounded-circle p-1 shadow mb-3" width="90" height="90"
+                <img src="assets/images/fotokucing.jpg" class="rounded-circle p-1 shadow mb-3" width="90" height="90"
                   alt="">
                 <h5 class="user-name mb-0 fw-bold">Hello, Eris</h5>
               </div>
@@ -484,8 +497,7 @@
     </nav>
   </header>
   <!--end top header-->
-
-
+  
    <!--start sidebar-->
    <aside class="sidebar-wrapper" data-simplebar="true">
     <div class="sidebar-header">
@@ -509,26 +521,33 @@
               <div class="menu-title">Dashboard</div>
             </a>
           </li>
+
           <li>
             <a href="javascript:;" class="has-arrow">
-              <div class="parent-icon"><i class="material-icons-outlined">dashboard</i>
+              <div class="parent-icon"><i class="material-icons-outlined">backpack</i>
               </div>
-              <div class="menu-title">Stok</div>
+
+              <div class="menu-title">Stock Barang</div>
             </a>
+            <ul>
+              <li><a href="widgets-data.html"><i class="material-icons-outlined">arrow_right</i>Data Barang</a>
+              </li>
+            </ul>
           </li>
+
           <li>
             <a href="javascript:;" class="has-arrow">
               <div class="parent-icon"><i class="material-icons-outlined">upload</i>
               </div>
+
               <div class="menu-title">Data Barang Masuk</div>
             </a>
             <ul>
-              <li><a href="widgets-data.html"><i class="material-icons-outlined">arrow_right</i>Data</a>
-              </li>
-              <li><a href="widgets-static.html"><i class="material-icons-outlined">arrow_right</i>Static</a>
+              <li><a href="/barang_masuk/"><i class="material-icons-outlined">arrow_right</i>Data Barang</a>
               </li>
             </ul>
           </li>
+
           <li>
             <a class="has-arrow" href="javascript:;">
               <div class="parent-icon"><i class="material-icons-outlined">download</i>
@@ -536,157 +555,16 @@
               <div class="menu-title">Data Barang Keluar</div>
             </a>
             <ul>
-              <li><a href="app-emailbox.html"><i class="material-icons-outlined">arrow_right</i>Email Box</a>
-              </li>
-              <li><a href="app-emailread.html"><i class="material-icons-outlined">arrow_right</i>Email Read</a>
+              <li><a href="app-emailbox.html"><i class="material-icons-outlined">arrow_right</i>Data Barang</a>
               </li>
             </ul>
           </li>
     </div>
+
   </aside>
-<!--end sidebar-->
 
- <main class="main-wrapper">
-    <div class="main-content">
-      <!--breadcrumb-->
-		 <div class="card-body">
-          <div class="row row-cols-1 row-cols-lg-2 row-cols-xl-4 g-3">
-            <div class="col">
-              <div class="card rounded-4 mb-0 border">
-                <div class="card-body">
-                  <div class="d-flex align-items-center justify-content-between">
-                    <img src="assets/images/apps/05.png" width="35" alt="">
-                    <div class="dropdown">
-                      <a href="javascript:;" class="dropdown-toggle-nocaret options dropdown-toggle"
-                        data-bs-toggle="dropdown">
-                        <span class="material-icons-outlined fs-5">more_vert</span>
-                      </a>
-                      <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="javascript:;">Action</a></li>
-                        <li><a class="dropdown-item" href="javascript:;">Another action</a></li>
-                        <li><a class="dropdown-item" href="javascript:;">Something else here</a></li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="mt-4">
-                    <h4 class="mb-0 fw-light">45.2K</h4>
-                    <p class="mb-0">Followers</p>
-                  </div>
-                  <div class="d-flex align-items-center justify-content-end gap-1 mt-3">
-                    <p
-                      class="dash-lable d-flex align-items-center gap-1 rounded mb-0 bg-danger text-danger bg-opacity-10">
-                      <span class="material-icons-outlined fs-6">arrow_downward</span>45.7%
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card rounded-4 mb-0 border">
-                <div class="card-body">
-                  <div class="d-flex align-items-center justify-content-between">
-                    <img src="assets/images/apps/18.png" width="35" alt="">
-                    <div class="dropdown">
-                      <a href="javascript:;" class="dropdown-toggle-nocaret options dropdown-toggle"
-                        data-bs-toggle="dropdown">
-                        <span class="material-icons-outlined fs-5">more_vert</span>
-                      </a>
-                      <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="javascript:;">Action</a></li>
-                        <li><a class="dropdown-item" href="javascript:;">Another action</a></li>
-                        <li><a class="dropdown-item" href="javascript:;">Something else here</a></li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="mt-4">
-                    <h4 class="mb-0 fw-light">62.4K</h4>
-                    <p class="mb-0">Followers</p>
-                  </div>
-                  <div class="d-flex align-items-center justify-content-end gap-1 mt-3">
-                    <p
-                      class="dash-lable d-flex align-items-center gap-1 rounded mb-0 bg-success text-success bg-opacity-10">
-                      <span class="material-icons-outlined fs-6">arrow_downward</span>25.6%
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card rounded-4 mb-0 border">
-                <div class="card-body">
-                  <div class="d-flex align-items-center justify-content-between">
-                    <img src="assets/images/apps/17.png" width="35" alt="">
-                    <div class="dropdown">
-                      <a href="javascript:;" class="dropdown-toggle-nocaret options dropdown-toggle"
-                        data-bs-toggle="dropdown">
-                        <span class="material-icons-outlined fs-5">more_vert</span>
-                      </a>
-                      <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="javascript:;">Action</a></li>
-                        <li><a class="dropdown-item" href="javascript:;">Another action</a></li>
-                        <li><a class="dropdown-item" href="javascript:;">Something else here</a></li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="mt-4">
-                    <h4 class="mb-0 fw-light">25.8K</h4>
-                    <p class="mb-0">Followers</p>
-                  </div>
-                  <div class="d-flex align-items-center justify-content-end gap-1 mt-3">
-                    <p
-                      class="dash-lable d-flex align-items-center gap-1 rounded mb-0 bg-danger text-danger bg-opacity-10">
-                      <span class="material-icons-outlined fs-6">arrow_downward</span>25.6%
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card rounded-4 mb-0 border">
-                <div class="card-body">
-                  <div class="d-flex align-items-center justify-content-between">
-                    <img src="assets/images/apps/19.png" width="35" alt="">
-                    <div class="dropdown">
-                      <a href="javascript:;" class="dropdown-toggle-nocaret options dropdown-toggle"
-                        data-bs-toggle="dropdown">
-                        <span class="material-icons-outlined fs-5">more_vert</span>
-                      </a>
-                      <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="javascript:;">Action</a></li>
-                        <li><a class="dropdown-item" href="javascript:;">Another action</a></li>
-                        <li><a class="dropdown-item" href="javascript:;">Something else here</a></li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="mt-4">
-                    <h4 class="mb-0 fw-light">58.9K</h4>
-                    <p class="mb-0">Followers</p>
-                  </div>
-                  <div class="d-flex align-items-center justify-content-end gap-1 mt-3">
-                    <p
-                      class="dash-lable d-flex align-items-center gap-1 rounded mb-0 bg-success text-success bg-opacity-10">
-                      <span class="material-icons-outlined fs-6">north</span>34.8%
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
+  
 
-          </div><!--end row-->
-        </div>
-		<!--end breadcrumb-->
-      
-	 
-        
-    </div>
-  </main>
-
-
-   <!--start footer-->
-   <footer class="page-footer">
-    <p class="mb-0">Copyright © 2024. All right reserved.</p>
-  </footer>
-  <!--end footer-->
   
 
   <!--bootstrap js-->

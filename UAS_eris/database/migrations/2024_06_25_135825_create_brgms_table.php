@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('brgms', function (Blueprint $table) {
             $table->id();
-            $table->string('kode_m')->unique();
-            $table->string('nm_brg');
-            $table->string('jns_brg');
-            $table->date('tgl_msk');
+            $table->string('nama_barang')->unique();
+            $table->string('jumlah');
+            $table->string('harga');
+            $table->date('tanggal_masuk');
             $table->timestamps();
         });
     }

@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use APP\Models\Brgk;
+use App\Models\brgk;
 
-class BrgkController extends Controller
+class BgrkController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +13,7 @@ class BrgkController extends Controller
     public function index()
     {
         $nomor = 1;
-        $bk = Brgk::all();
+        $bk = brgk::all();
         return view('barang_keluar.index',compact('nomor','bk'));
     }
 
@@ -22,8 +22,8 @@ class BrgkController extends Controller
      */
     public function create()
     {
-        $bk = Brgk::all();
-        return view('barang_keluar.index',compact('nomor','bm'));
+        $bk = brgk::all();
+        return view('barang_keluar.form');
     }
 
     /**
@@ -31,11 +31,11 @@ class BrgkController extends Controller
      */
     public function store(Request $request)
     {
-        $bk = new Brgk;
-        $bk->nama_barang = $request->nama_barang;
+        $bk = new brgk;
+        $bk->nm_brg = $request->nama_barang;
         $bk->jumlah = $request->jumlah;
         $bk->harga = $request->harga;
-        $bk->tanggal_keluar = $request->tanggal_keluar;
+        $bk->tgl_klr = $request->tanggal_keluar;
         $bk->save();
 
         return redirect('/barang_keluar/');

@@ -17,12 +17,11 @@
                                 <h2>                                
                                     <p>@yield('heading')</p>
                                 </h2>
-                                <hr>
-                                    <p>@yield('content')</p>
+                                    <!-- <p>@yield('content')</p> -->
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>
   <!--plugins-->
   <link href="{{asset('assets/plugins/perfect-scrollbar/css/perfect-scrollbar.css')}}" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="{{asset('assets/plugins/metismenu/metisMenu.min.css')}}">
@@ -555,13 +554,21 @@
               <div class="menu-title">Data Barang Keluar</div>
             </a>
             <ul>
-              <li><a href="app-emailbox.html"><i class="material-icons-outlined">arrow_right</i>Data Barang</a>
+              <li><a href="barang_keluar"><i class="material-icons-outlined">arrow_right</i>Data Barang</a>
               </li>
             </ul>
           </li>
     </div>
 
   </aside>
+
+  <main class="main-wrapper">
+    <div class="main-content">
+      <!--breadcrumb-->
+      @yield('content')
+				<!--end breadcrumb-->
+    </div>
+  </main>
 
   
 

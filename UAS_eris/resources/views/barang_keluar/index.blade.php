@@ -1,6 +1,5 @@
 @extends('layouts.master')
 @section('title','Data Barang Keluar')
-@section('judul','Data Barang Keluar')
 @section('bc')
     <ol class="breadcrumb float-sm-right">
         <li class="breadcrumb-item"><a href="#">Home</a></li>
@@ -53,7 +52,7 @@
 @section('content')
     <div class="card">
         <div class="card-header">
-        <a href="/mahasiswa/form/" class="btn btn-primary"><i class="fa fa-plus"></i> Tambah Data</a>
+        <a href="/barang_keluar/form/" class="btn btn-primary"><i class="fa fa-plus"></i> Tambah Data</a>
 
         <div class="card-tools">
             <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
@@ -72,6 +71,7 @@
                         <th>Nama Barang</th>
                         <th>Jumlah</th>
                         <th>Harga</th>
+                        <th>Tanggal</th>
                         <th>action</th>
                     </tr>
                 </thead>
@@ -79,85 +79,21 @@
                     @forelse ($bk as $item)
                         <tr>
                             <td>{{$nomor++}}</td>
-                            <td>{{$item->nama_barang}}</td>
+                            <td>{{$item->nm_brg}}</td>
                             <td>{{$item->jumlah}}</td>
                             <td>{{$item->harga}}</td>
+                            <td>{{$item->tgl_klr}}</td>
                             <td>
+
                                 <button type="button" class="btn btn-success btn-xs" data-toggle="modal" data-target="#detail{{$item->id}}">
-                                    <i class="fa fa-eye"></i>
+                                    Edit</i>
                                 </button>
 
-                                <!-- Modal Detail-->
-                                <div class="modal fade" id="detail{{$item->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Detail {{$item->nama_barang}}</h1>
-                                        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <table class="table">
-
-                                                <tbody>
-                                                        <tr>
-                                                            <td>nama_barang</td>
-                                                            <th scope="row">{{$item->nama_barang}}</th>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>jumlah</td>
-                                                            <th scope="row">{{$item->jumlah}}</th>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>harga</td>
-                                                            <th scope="row">{{$item->harga}}</th>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>tanggal</td>
-                                                            <th scope="row">{{$item->tanggal}}</th>
-                                                        </tr>
-
-                                                            <th scope="row"><img src="{{ asset('/foto/'.$item->foto) }}" width="100" alt=""></th>
-                                                        </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                        <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
-
-                                        </div>
-                                    </div>
-                                    </div>
-                                </div>
-
-                                <a href="/jurusan/edit/{{$item->id}}" class="btn btn-info btn-xs"><i class="fa fa-pencil-alt"></i></a>
-
-                                <button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#hapus{{$item->id}}">
-                                    <i class="fa fa-trash"></i>
-                                </button>
-
-                                <!-- Modal Hapus-->
-                                <div class="modal fade" id="hapus{{$item->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Peringatan</h1>
-                                        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
-                                        </div>
-                                        <div class="modal-body">
-                                        Yakin ingin menghapus data barang keluar <b>{{$item->nama_barang}}</b>?
-                                        </div>
-                                        <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
-                                        <form action="/jurusan/{{$item->id}}" method="post">
+                                 <form action="/barang_keluar/{{$item->id}}" method="post">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="btn btn-primary">Hapus</button>
-                                        </form>
-
-                                        </div>
-                                    </div>
-                                    </div>
-                                </div>
+                                </form>
                             </td>
                         </tr>
                     @empty

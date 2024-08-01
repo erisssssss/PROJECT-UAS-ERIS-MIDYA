@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use APP\Models\Brgm;
+use App\Models\Brgm;
 
 class BrgmController extends Controller
 {
@@ -23,7 +23,7 @@ class BrgmController extends Controller
     public function create()
     {
         $bm = Brgm::all();
-        return view('barang_masuk.index',compact('nomor','bm'));
+        return view('barang_masuk.form');
     }
 
     /**
@@ -32,10 +32,10 @@ class BrgmController extends Controller
     public function store(Request $request)
     {
         $bm = new Brgm;
-        $bm->nama_barang = $request->nama_barang;
+        $bm->nm_brg = $request->nama_barang;
         $bm->jumlah = $request->jumlah;
         $bm->harga = $request->harga;
-        $bm->tanggal_masuk = $request->tanggal_masuk;
+        $bm->tgl_msk = $request->tanggal_masuk;
         $bm->save();
 
         return redirect('/barang_masuk/');

@@ -70,6 +70,9 @@ class BrgmController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $bm = Brgm::find($id);
+        $bm->delete();
+
+        return redirect('/jurusan/');
     }
 }

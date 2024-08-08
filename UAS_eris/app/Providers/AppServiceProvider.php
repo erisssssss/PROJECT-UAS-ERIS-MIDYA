@@ -3,6 +3,10 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use App\Models\Brgm;
+use App\Models\Brgk;
+use App\Observers\BrgmObserver;
+use App\Observers\BrgkObserver;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -19,6 +23,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        // Daftarkan observer untuk model Brgm
+        Brgm::observe(BrgmObserver::class);
+
+        // Daftarkan observer untuk model Brgk
+        Brgk::observe(BrgkObserver::class);
     }
 }
+

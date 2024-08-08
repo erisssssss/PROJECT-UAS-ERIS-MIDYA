@@ -529,7 +529,7 @@
               <div class="menu-title">Stock Barang</div>
             </a>
             <ul>
-              <li><a href="widgets-data.html"><i class="material-icons-outlined">arrow_right</i>Data Barang</a>
+              <li><a href="/stok"><i class="material-icons-outlined">arrow_right</i>Data Barang</a>
               </li>
             </ul>
           </li>
@@ -554,7 +554,7 @@
               <div class="menu-title">Data Barang Keluar</div>
             </a>
             <ul>
-              <li><a href="barang_keluar"><i class="material-icons-outlined">arrow_right</i>Data Barang</a>
+              <li><a href="/barang_keluar"><i class="material-icons-outlined">arrow_right</i>Data Barang</a>
               </li>
             </ul>
           </li>

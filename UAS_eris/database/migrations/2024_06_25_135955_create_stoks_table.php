@@ -14,6 +14,7 @@ return new class extends Migration
             $table->string('nm_brg');
             $table->string('jns_brg');
             $table->string('merk');
+            $table->string('harga');
             $table->integer('stok');
             $table->unsignedBigInteger('brgm_id');
             $table->unsignedBigInteger('brgk_id')->nullable();
@@ -28,5 +29,5 @@ return new class extends Migration
     {
         Schema::dropIfExists('stoks');
     }
-};
+};      
 

@@ -69,6 +69,8 @@
                     <tr>
                         <th>Nomor</th>
                         <th>Nama Barang</th>
+                        <th>Jenis Barang</th>
+                        <th>Merk</th>
                         <th>Jumlah</th>
                         <th>Harga</th>
                         <th>Tanggal</th>
@@ -80,25 +82,25 @@
                         <tr>
                             <td>{{$nomor++}}</td>
                             <td>{{$item->nm_brg}}</td>
+                            <td>{{$item->jenis_brg}}</td>
+                            <td>{{$item->merk}}</td>
                             <td>{{$item->jumlah}}</td>
                             <td>{{$item->harga}}</td>
                             <td>{{$item->tgl_klr}}</td>
                             <td>
-
-                                <button type="button" class="btn btn-success btn-xs" data-toggle="modal" data-target="#detail{{$item->id}}">
+                                <!-- <button type="button" class="btn btn-success btn-xs" data-toggle="modal" data-target="#detail{{$item->id}}">
                                     Edit</i>
-                                </button>
-
+                                </button> -->
                                  <form action="/barang_keluar/{{$item->id}}" method="post">
                                             @csrf
                                             @method('DELETE')
-                                            <button type="submit" class="btn btn-primary">Hapus</button>
+                                  <button type="submit" class="btn btn-primary">Hapus</button>
                                 </form>
                             </td>
                         </tr>
                     @empty
                         <tr>
-                            <td colspan="5" class="text-center">Tidak Ada Data</td>
+                            <td colspan="8" class="text-center">Tidak Ada Data</td>
                         </tr>
                     @endforelse
 

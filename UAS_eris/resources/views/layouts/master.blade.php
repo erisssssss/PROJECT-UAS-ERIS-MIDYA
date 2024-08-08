@@ -514,7 +514,7 @@
         <!--navigation-->
         <ul class="metismenu" id="sidenav">
         <li>
-            <a href="javascript:;" class="has-arrow">
+            <a href="/" class="has-arrow">
               <div class="parent-icon"><i class="material-icons-outlined">home</i>
               </div>
               <div class="menu-title">Dashboard</div>

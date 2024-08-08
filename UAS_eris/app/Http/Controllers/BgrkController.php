@@ -33,12 +33,14 @@ class BgrkController extends Controller
     {
         $bk = new brgk;
         $bk->nm_brg = $request->nama_barang;
+        $bk->merk = $request->merk;
+        $bk->jenis_brg = $request->jenis;
         $bk->jumlah = $request->jumlah;
         $bk->harga = $request->harga;
         $bk->tgl_klr = $request->tanggal_keluar;
         $bk->save();
 
-        return redirect('/barang_keluar/');
+        return redirect('/barang_keluar');
     }
 
     /**
@@ -54,7 +56,8 @@ class BgrkController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $bk = brgk::find($id);
+        return view('barang_keluar.edit',compact('bk'));
     }
 
     /**
@@ -62,7 +65,16 @@ class BgrkController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $bk = brgk::find($id);
+        $bk->nm_brg = $request->nama_barang;
+        $bk->merk = $request->merk;
+        $bk->jenis_brg = $request->jenis;
+        $bk->jumlah = $request->jumlah;
+        $bk->harga = $request->harga;
+        $bk->tgl_klr = $request->tanggal_keluar;
+        $bk->save();
+
+        return redirect('/barang_keluar');
     }
 
     /**
@@ -70,6 +82,8 @@ class BgrkController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $bk = brgk::find($id);
+        $bk->delete();
+        return redirect('/barang_keluar');
     }
 }

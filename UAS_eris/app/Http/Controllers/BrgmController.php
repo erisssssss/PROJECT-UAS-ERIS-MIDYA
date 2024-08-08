@@ -33,12 +33,14 @@ class BrgmController extends Controller
     {
         $bm = new Brgm;
         $bm->nm_brg = $request->nama_barang;
+        $bm->merk = $request->merk;
+        $bm->jenis_brg = $request->jenis;
         $bm->jumlah = $request->jumlah;
         $bm->harga = $request->harga;
         $bm->tgl_msk = $request->tanggal_masuk;
         $bm->save();
 
-        return redirect('/barang_masuk/');
+        return redirect('/barang_masuk');
     }
 
     /**
@@ -54,7 +56,8 @@ class BrgmController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $bm = Brgm::find($id);
+        return view('barang_masuk.edit',compact('bm'));
     }
 
     /**
@@ -62,17 +65,31 @@ class BrgmController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $bm = Brgm::find($id);
+        $bm->nm_brg = $request->nama_barang;
+        $bm->merk = $request->merk;
+        $bm->jenis_brg = $request->jenis;
+        $bm->jumlah = $request->jumlah;
+        $bm->harga = $request->harga;
+        $bm->tgl_msk = $request->tanggal_masuk;
+        $bm->save();
+
+        return redirect('/barang_masuk');
     }
 
     /**
      * Remove the specified resource from storage.
      */
     public function destroy(string $id)
-    {
-        $bm = Brgm::find($id);
-        $bm->delete();
+{
+    $bm = Brgm::find($id);
 
-        return redirect('/jurusan/');
+    if ($bm) {
+        $bm->delete();
+        return redirect('/barang_masuk')->with('success', 'Data berhasil dihapus.');
+    } else {
+        return redirect('/barang_masuk')->with('error', 'Data tidak ditemukan.');
     }
+}
+
 }

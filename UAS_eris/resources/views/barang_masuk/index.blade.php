@@ -69,7 +69,9 @@
                 <thead>
                     <tr>
                         <th>Nomor</th>
-                        <th>Nama_Barang</th>
+                        <th>Nama Barang</th>
+                        <th>Jenis Barang</th>
+                        <th>Merk</th>
                         <th>Jumlah</th>
                         <th>Harga</th>
                         <th>Tanggal</th>
@@ -81,21 +83,23 @@
                         <tr>
                             <td>{{$nomor++}}</td>
                             <td>{{$item->nm_brg}}</td>
+                            <td>{{$item->jenis_brg}}</td>
+                            <td>{{$item->merk}}</td>
                             <td>{{$item->jumlah}}</td>
                             <td>{{$item->harga}}</td>
                             <td>{{$item->tgl_msk}}</td>
                             <td>
                                 <a href="/barang_masuk/edit/{{$item->id}}" class="btn btn-info btn-xs">Edit</a>
-
+<!--                                 
                                 <button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#hapus{{$item->id}}">
                                     Hapus
-                                </button>
+                                </button> -->
 
                             </td>
                         </tr>
                     @empty
                         <tr>
-                            <td colspan="5" class="text-center">Tidak Ada Data</td>
+                            <td colspan="8" class="text-center">Tidak Ada Data</td>
                         </tr>
                     @endforelse
 

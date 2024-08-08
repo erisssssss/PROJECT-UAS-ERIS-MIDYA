@@ -22,8 +22,9 @@ class BrgmObserver
 
         // Update kolom-kolom yang relevan
         $stok->nm_brg = $brgm->nm_brg; // Menggunakan nama_barang dari Brgm
-        $stok->jns_brg = 'jenis_barang'; // Sesuaikan dengan data sebenarnya atau logika yang sesuai
-        $stok->merk = 'merk_barang'; // Sesuaikan dengan data sebenarnya atau logika yang sesuai
+        $stok->jns_brg = $brgm->jenis_brg; // Sesuaikan dengan data sebenarnya atau logika yang sesuai
+        $stok->merk = $brgm->merk;
+        $stok->harga = $brgm->harga; // Sesuaikan dengan data sebenarnya atau logika yang sesuai
         $stok->stok = ($stok->stok ?? 0) + $brgm->jumlah; // Tambahkan jumlah barang masuk ke stok
 
         // Set relasi dengan Brgm
@@ -46,8 +47,8 @@ class BrgmObserver
         $stok = Stok::where('brgm_id', $brgm->id)->first();
         if ($stok) {
             $stok->nm_brg = $brgm->nm_brg;
-            $stok->jns_brg = 'jenis_barang'; // Sesuaikan dengan data sebenarnya atau logika yang sesuai
-            $stok->merk = 'merk_barang'; // Sesuaikan dengan data sebenarnya atau logika yang sesuai
+            $stok->jns_brg = $brgm->jenis_brg; // Sesuaikan dengan data sebenarnya atau logika yang sesuai
+            $stok->merk = $brgm->merk; // Sesuaikan dengan data sebenarnya atau logika yang sesuai
             $stok->stok = ($stok->stok ?? 0) + $brgm->jumlah; // Tambahkan jumlah barang masuk ke stok
             $stok->save();
         }

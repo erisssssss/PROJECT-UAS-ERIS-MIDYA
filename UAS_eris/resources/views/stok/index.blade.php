@@ -64,6 +64,7 @@
                     <th>Nama Barang</th>
                     <th>Jenis Barang</th>
                     <th>Merk</th>
+                    <th>Harga</th>
                     <th>Stok</th>
                 </tr>
             </thead>
@@ -73,6 +74,7 @@
                     <td>{{ $stok->nm_brg }}</td>
                     <td>{{ $stok->jns_brg }}</td>
                     <td>{{ $stok->merk }}</td>
+                    <td>{{ $stok->harga }}</td>
                     <td>{{ $stok->stok }}</td>
                 </tr>
                 @endforeach

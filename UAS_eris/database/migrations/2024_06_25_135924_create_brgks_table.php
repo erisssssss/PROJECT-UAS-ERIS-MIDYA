@@ -14,6 +14,8 @@ return new class extends Migration
         Schema::create('brgks', function (Blueprint $table) {
             $table->id();
             $table->string('nm_brg');
+            $table->string('merk');
+            $table->string('jenis_brg');
             $table->string('jumlah');
             $table->string('harga');
             $table->date('tgl_klr');
